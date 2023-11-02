@@ -1,0 +1,21 @@
+class Solution {
+    public String reverseWords(String s) {
+         s = s.trim();
+
+        // Split the string into words using the space character as a delimiter.
+        String[] words = s.split(" ");
+
+        // Reverse the order of the words in the array.
+        Collections.reverse(Arrays.asList(words));
+
+        // Build the reversed string by joining the words together with a single space.
+        StringBuilder sb = new StringBuilder();
+        for (String word : words) {
+            sb.append(word);
+            sb.append(" ");
+        }
+
+        // Remove the trailing space.
+        sb.setLength(sb.length() - 1);
+
+        return sb.toString();
